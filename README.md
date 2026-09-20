@@ -1,7 +1,11 @@
-# Don't Be Scared — dontbescared.co.uk
+# Don't Be Scared
 
 Static site. No build step, no server required. Every page is plain
 HTML/CSS/JS and can be deployed as-is.
+
+Live at: https://dontbescared.dontbescared-website.workers.dev
+(free Cloudflare Workers static hosting — no custom domain purchased,
+by choice, to keep running cost at £0).
 
 ## Local preview
 
@@ -15,10 +19,20 @@ backlog needs an actual HTTP server — opening the file directly with
 
 ## Deploying
 
-Push this folder to a Git repo and connect it to Netlify, Cloudflare
-Pages, or GitHub Pages (any of them — it's static files, no build
-command needed). Point dontbescared.co.uk's DNS at whichever host you
-pick.
+Currently deployed to Cloudflare Workers static assets (configured via
+`wrangler.jsonc`). To redeploy after making changes:
+
+```
+npx wrangler deploy
+```
+
+`.assetsignore` keeps `.git` and `.wrangler` out of the publicly
+served files — don't remove it.
+
+If a custom domain gets bought later (e.g. dontbescared.co.uk), attach
+it in the Cloudflare dashboard under this Worker's **Domains &
+Routes** — no rebuild needed, and update the `og:url`/`twitter:image`
+meta tags and footer text across the pages to match.
 
 ## Wiring up the "Ask The Cosmos" form
 
