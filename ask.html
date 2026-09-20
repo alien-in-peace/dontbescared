@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ask The Cosmos — Don't Be Scared</title>
+<meta name="description" content="Submit a conspiracy, theory, or claim to be broken down against the evidence, and browse the growing library of crowd-sourced debunks." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dontbescared.co.uk/ask.html" />
+<meta property="og:title" content="Ask The Cosmos — Don't Be Scared" />
+<meta property="og:description" content="Submit a conspiracy, theory, or claim to be broken down against the evidence, and browse the growing library of crowd-sourced debunks." />
+<meta property="og:image" content="https://dontbescared.co.uk/images/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ask The Cosmos — Don't Be Scared" />
+<meta name="twitter:description" content="Submit a conspiracy, theory, or claim to be broken down against the evidence, and browse the growing library of crowd-sourced debunks." />
+<meta name="twitter:image" content="https://dontbescared.co.uk/images/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2242%22 fill=%22%2305070d%22 stroke=%22%235fd8ff%22 stroke-width=%224%22/><circle cx=%2250%22 cy=%2250%22 r=%226%22 fill=%22%235fd8ff%22/></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark"></span> DON'T BE SCARED</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="vault.html">The Vault</a></li>
+      <li><a href="backyard-tests.html">Backyard Tests</a></li>
+      <li><a href="open-optics.html">Open Optics</a></li>
+      <li><a href="timeline.html">The Real Timeline</a></li>
+      <li><a href="ask.html">Ask The Cosmos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Ask The Cosmos</div>
+    <h1>Found a claim we haven't covered?</h1>
+    <p class="lede">
+      Drop a conspiracy, theory, or argument below. If it attempts to
+      rewrite physics or astronomy, we'll break down the math, the
+      science, and a DIY experiment to test it &mdash; and publish the
+      answer here for everyone.
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="grid-2" style="align-items:start;">
+
+      <div class="ask-box">
+        <div class="ask-head">Submit for Analysis</div>
+        <form class="ask-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New Ask The Cosmos submission — dontbescared.co.uk" />
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-row">
+            <label for="alias">Name / Alias (optional)</label>
+            <input type="text" id="alias" name="alias" placeholder="e.g. curious_in_liverpool" autocomplete="off" />
+          </div>
+          <div class="form-row">
+            <label for="claim">What claim or argument do you want us to debunk or explain?</label>
+            <textarea id="claim" name="message" rows="6" required placeholder="Describe the claim, where you encountered it, and any specific 'evidence' it relies on..."></textarea>
+          </div>
+          <button type="submit" class="btn">Submit For Analysis</button>
+          <p class="form-status"></p>
+          <p class="form-note">
+            Runs on <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a> &mdash;
+            free, no backend required. To go live, grab an access key at
+            web3forms.com and drop it into the <code>access_key</code>
+            field in ask.html. Submissions land in your inbox; answered
+            ones get added to the backlog below by editing
+            <code>data/debunks.json</code>.
+          </p>
+        </form>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:10px;">How this works</h3>
+        <ol class="steps-numbered">
+          <li>You submit a claim, in your own words, with as much detail as you have.</li>
+          <li>We research it against primary evidence &mdash; physics, published data, or a reproducible experiment.</li>
+          <li>The answer is written up plainly, with sources and a DIY test where one exists.</li>
+          <li>It's added to the public backlog below, building an open, crowd-sourced library of refutations.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Backlog</div>
+      <h2>User-submitted debunks</h2>
+      <p class="lede">Every answered claim, in one growing library.</p>
+    </div>
+    <div class="search-row">
+      <input type="search" id="debunk-search" class="search-input" placeholder="Search the backlog… (e.g. gravity, ISS, shadows)" aria-label="Search the debunks backlog" />
+    </div>
+    <p id="debunk-list-status">Loading submitted claims&hellip;</p>
+    <div id="debunk-list"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>&copy; 2026 Don't Be Scared &mdash; dontbescared.co.uk</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/debunks.js"></script>
+</body>
+</html>

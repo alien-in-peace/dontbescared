@@ -1,0 +1,38 @@
+[
+  {
+    "id": "d001",
+    "tag": "Perspective / Optics",
+    "question": "If the Earth is a sphere, why does the horizon always look flat and rise to eye level, even from a plane?",
+    "date": "2026-08-02",
+    "submittedBy": "M.",
+    "answers": [
+      "At everyday altitudes the curvature is real but shallow: at 10,000 m the drop across your visible horizon is only a few degrees, well below what unaided eyes reliably notice against a hazy sky. That's a limit of human perception, not evidence the curve isn't there.",
+      "The effect isn't invisible, though — it's measurable. Horizon dip below true eye-level increases predictably with altitude (roughly 1.06 x sqrt(altitude in feet) arcminutes), and hobbyists have verified this with nothing more than a phone inclinometer and a weather balloon or a tall building.",
+      "At cruising altitude on a very clear day with a wide-angle horizon (e.g. over open ocean), commercial pilots and high-altitude photographers do capture a visible curve — it just needs a wide field of view and clean atmosphere, not a fisheye-lens illusion."
+    ]
+  },
+  {
+    "id": "d002",
+    "tag": "Space Hoax",
+    "question": "Why do stars not show up in most photos taken on the Moon or from the ISS?",
+    "date": "2026-07-19",
+    "submittedBy": "Anonymous",
+    "answers": [
+      "It's basic exposure math. The lunar surface and astronaut suits in direct sunlight are extremely bright, so cameras use fast shutter speeds and small apertures to avoid blowing out the image. Stars are far too dim to register in that same fast exposure — the same reason you can't see stars in a daytime photo on Earth.",
+      "When astronauts deliberately shoot long-exposure, dark-adapted frames — pointing away from the sun and Earth — stars appear exactly as expected, correctly positioned for the date and location.",
+      "You can reproduce this yourself: photograph a floodlit object at night with a fast daytime-style exposure. The background stars vanish in your photo too, for the same optical reason."
+    ]
+  },
+  {
+    "id": "d003",
+    "tag": "Gravity",
+    "question": "Couldn't gravity just be density and buoyancy pushing dense things down, rather than mass attracting mass?",
+    "date": "2026-06-27",
+    "submittedBy": "R. K.",
+    "answers": [
+      "Density/buoyancy explains why a helium balloon rises through air, but it can't explain the Cavendish experiment: two lead spheres in a sealed vacuum chamber, with no air or fluid to create buoyancy, still measurably pull toward each other. That attraction can only be gravity acting on mass.",
+      "Buoyancy also can't explain why astronauts and objects of wildly different density (a hammer and a feather, famously demonstrated live on the Moon) fall at the identical rate in a vacuum — buoyancy would separate them, gravity alone does not.",
+      "You can replicate a simplified Cavendish torsion-balance setup at home with fishing line, two small masses, and a laser pointer — it's a well-documented physics club build."
+    ]
+  }
+]

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Backyard Tests — Don't Be Scared</title>
+<meta name="description" content="DIY physics, geometry, and camera experiments you can run yourself to verify Earth's shape, motion, and the reality of orbit." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dontbescared.co.uk/backyard-tests.html" />
+<meta property="og:title" content="Backyard Tests — Don't Be Scared" />
+<meta property="og:description" content="DIY physics, geometry, and camera experiments you can run yourself to verify Earth's shape, motion, and the reality of orbit." />
+<meta property="og:image" content="https://dontbescared.co.uk/images/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Backyard Tests — Don't Be Scared" />
+<meta name="twitter:description" content="DIY physics, geometry, and camera experiments you can run yourself to verify Earth's shape, motion, and the reality of orbit." />
+<meta name="twitter:image" content="https://dontbescared.co.uk/images/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2242%22 fill=%22%2305070d%22 stroke=%22%235fd8ff%22 stroke-width=%224%22/><circle cx=%2250%22 cy=%2250%22 r=%226%22 fill=%22%235fd8ff%22/></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark"></span> DON'T BE SCARED</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="vault.html">The Vault</a></li>
+      <li><a href="backyard-tests.html">Backyard Tests</a></li>
+      <li><a href="open-optics.html">Open Optics</a></li>
+      <li><a href="timeline.html">The Real Timeline</a></li>
+      <li><a href="ask.html">Ask The Cosmos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Backyard Tests</div>
+    <h1>Don't take our word for it. Run the test.</h1>
+    <p class="lede">
+      Four experiments you can do with cheap, ordinary equipment. Each
+      one produces a result that only makes sense if Earth is a rotating
+      sphere and orbit is real.
+    </p>
+    <div class="anchor-links">
+      <a href="#star-tracker">Horizon-Spin Star Tracker</a>
+      <a href="#spherical-triangle">3-Turn Spherical Triangle</a>
+      <a href="#star-trails">Dual-Hemisphere Star Trails</a>
+      <a href="#eratosthenes">Eratosthenes Shadow Angle</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+
+    <article class="exp-card" id="star-tracker">
+      <div class="eyebrow">Test 01</div>
+      <h3>The Horizon-Spin Star Tracker</h3>
+      <div class="exp-meta">
+        <span class="chip">Camera + motorized equatorial mount</span>
+        <span class="chip">Clear night, ~1 hour</span>
+        <span class="chip">Budget: medium</span>
+      </div>
+      <p>
+        An equatorial mount tracks the sky by rotating on an axis aligned
+        with Earth's own axis, cancelling out Earth's rotation so stars
+        stay pinpoint-sharp over a long exposure.
+      </p>
+      <ol class="exp-steps">
+        <li>Polar-align the mount to true north (or south) using its polar scope or a phone compass + inclination app.</li>
+        <li>Frame a wide shot that includes both open sky and a visible horizon element &mdash; a rooftop, tree line, or fence.</li>
+        <li>Start tracking and begin a long exposure (2&ndash;5 minutes) or an intervalometer sequence for a time-lapse.</li>
+        <li>Compare the star field to the foreground horizon across the sequence.</li>
+      </ol>
+      <div class="exp-proof">
+        <strong>Proof:</strong> because the mount is cancelling Earth's
+        rotation to lock onto the stars, the foreground horizon
+        visibly drifts and rotates through the frame instead &mdash;
+        direct photographic evidence that the ground, not the sky, is
+        the thing moving.
+      </div>
+    </article>
+
+    <article class="exp-card" id="spherical-triangle">
+      <div class="eyebrow">Test 02</div>
+      <h3>The 3-Turn Spherical Triangle</h3>
+      <div class="exp-meta">
+        <span class="chip">Chalk, string, globe</span>
+        <span class="chip">10 minutes</span>
+        <span class="chip">Budget: free</span>
+      </div>
+      <p>
+        On a flat plane, a triangle's interior angles always sum to
+        180&deg;. On a curved surface, they don't have to &mdash; and
+        that difference is measurable with string and chalk.
+      </p>
+      <ol class="exp-steps">
+        <li>On flat paper, draw a triangle where you turn 90&deg; at each of three corners; the interior angles sum to exactly 180&deg;, as expected.</li>
+        <li>On a globe (or large ball), start at the equator, travel a quarter of the way around to the pole, turn 90&deg;, travel back down to the equator, turn 90&deg; again, and travel along the equator back to your start, turning 90&deg; once more.</li>
+        <li>Add up the three turns you just made.</li>
+      </ol>
+      <div class="exp-proof">
+        <strong>Proof:</strong> on the sphere, those three 90&deg; turns
+        sum to 270&deg;, not 180&deg; &mdash; a closed triangle with
+        angles that only add up correctly if the surface you drew it on
+        is curved.
+      </div>
+    </article>
+
+    <article class="exp-card" id="star-trails">
+      <div class="eyebrow">Test 03</div>
+      <h3>Dual-Hemisphere Star Trails</h3>
+      <div class="exp-meta">
+        <span class="chip">Fixed tripod DSLR/mirrorless</span>
+        <span class="chip">30&ndash;60 min exposure</span>
+        <span class="chip">Budget: low</span>
+      </div>
+      <p>
+        Point a camera on a fixed (non-tracking) tripod at the pole star
+        region and let a long exposure record how stars trail across
+        the sky over time.
+      </p>
+      <ol class="exp-steps">
+        <li>In the northern hemisphere, frame the camera on Polaris; in the southern hemisphere, frame it on the region near Sigma Octantis.</li>
+        <li>Set a long single exposure or stack a sequence of 30-second frames with an intervalometer, then combine them.</li>
+        <li>Compare trail directions between a northern-hemisphere shot and a southern-hemisphere shot (your own, a friend's, or a published one from each).</li>
+      </ol>
+      <div class="exp-proof">
+        <strong>Proof:</strong> stars trail counter-clockwise around
+        Polaris in the north and clockwise around Sigma Octantis in the
+        south &mdash; opposite rotation direction from each hemisphere,
+        exactly what you'd expect looking at a spinning sphere from its
+        two opposite ends.
+      </div>
+    </article>
+
+    <article class="exp-card" id="eratosthenes">
+      <div class="eyebrow">Test 04</div>
+      <h3>Eratosthenes Shadow Angle Test</h3>
+      <div class="exp-meta">
+        <span class="chip">2 sticks, tape measure, a phone call</span>
+        <span class="chip">Solar noon</span>
+        <span class="chip">Budget: free</span>
+      </div>
+      <p>
+        The original circumference-of-Earth experiment, run by
+        Eratosthenes around 240 BCE &mdash; and still reproducible today
+        with a friend a few hundred miles north or south of you.
+      </p>
+      <ol class="exp-steps">
+        <li>Find a friend (or another site's data online) several hundred miles due north or south of you.</li>
+        <li>At solar noon in both locations, plant a stick vertically in the ground and measure its height and the length of its shadow.</li>
+        <li>Calculate the shadow angle at each location using basic trigonometry (arctangent of shadow length over stick height).</li>
+        <li>Compare the two angles and the known north-south distance between the two sites.</li>
+      </ol>
+      <div class="exp-proof">
+        <strong>Proof:</strong> the two locations cast shadows at
+        measurably different angles at the exact same moment in time
+        &mdash; impossible if the sun's rays were hitting a flat
+        surface uniformly, but exactly what curvature predicts. Plug the
+        angle difference and distance into Eratosthenes' original
+        formula and you'll land within a few percent of Earth's actual
+        circumference.
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="wrap">
+    <div class="ask-box compact">
+      <div class="ask-head">Found a claim we haven't covered?</div>
+      <p class="lede" style="margin-bottom:18px;">Drop a conspiracy, theory, or argument on the Ask The Cosmos page &mdash; we'll break down the math, science, and DIY experiments to test it.</p>
+      <a class="btn btn-outline" href="ask.html">Go to Ask The Cosmos &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>&copy; 2026 Don't Be Scared &mdash; dontbescared.co.uk</span>
+    <span><a href="ask.html">Submit a claim</a> &middot; <a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
