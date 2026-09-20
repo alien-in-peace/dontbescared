@@ -75,43 +75,52 @@
 
   function drawWarp(ts) {
     if (!warp) return;
-    if (warp.start === null) warp.start = ts;
-    var elapsed = ts - warp.start;
-    var t = Math.min(elapsed / warp.duration, 1);
-    var accel = Math.pow(t, 2.4) * 46 + 0.6;
+    var cb = warp.onDone;
+    try {
+      if (warp.start === null) warp.start = ts;
+      var elapsed = ts - warp.start;
+      var t = Math.min(elapsed / warp.duration, 1);
+      var accel = Math.pow(t, 2.4) * 46 + 0.6;
 
-    ctx.fillStyle = "rgba(5,7,13," + (t < 0.12 ? 0.4 : 0.24) + ")";
-    ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = "rgba(5,7,13," + (t < 0.12 ? 0.4 : 0.24) + ")";
+      ctx.fillRect(0, 0, w, h);
 
-    for (var i = 0; i < warp.streaks.length; i++) {
-      var s = warp.streaks[i];
-      var prevDist = s.dist;
-      s.dist += s.speed * accel;
-      var len = (s.dist - prevDist) + accel * 1.6;
-      var x1 = warp.cx + Math.cos(s.angle) * (s.dist - len);
-      var y1 = warp.cy + Math.sin(s.angle) * (s.dist - len);
-      var x2 = warp.cx + Math.cos(s.angle) * s.dist;
-      var y2 = warp.cy + Math.sin(s.angle) * s.dist;
-      var alpha = Math.min(0.18 + t * 0.85, 1);
-      ctx.strokeStyle = "rgba(" + s.hue + "," + alpha.toFixed(3) + ")";
-      ctx.lineWidth = Math.max(1, t * 2.6);
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.stroke();
-    }
+      for (var i = 0; i < warp.streaks.length; i++) {
+        var s = warp.streaks[i];
+        var prevDist = s.dist;
+        s.dist += s.speed * accel;
+        var len = (s.dist - prevDist) + accel * 1.6;
+        var x1 = warp.cx + Math.cos(s.angle) * (s.dist - len);
+        var y1 = warp.cy + Math.sin(s.angle) * (s.dist - len);
+        var x2 = warp.cx + Math.cos(s.angle) * s.dist;
+        var y2 = warp.cy + Math.sin(s.angle) * s.dist;
+        var alpha = Math.min(0.18 + t * 0.85, 1);
+        ctx.strokeStyle = "rgba(" + s.hue + "," + alpha.toFixed(3) + ")";
+        ctx.lineWidth = Math.max(1, t * 2.6);
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+      }
 
-    if (t >= 1) {
-      var cb = warp.onDone;
+      if (t >= 1) {
+        warp = null;
+        mode = "twinkle";
+        if (cb) cb();
+        return;
+      }
+      requestAnimationFrame(drawWarp);
+    } catch (err) {
+      // Canvas failed mid-animation (privacy mode, low-power throttling, etc.)
+      // Never strand the visitor on the splash screen because of it.
       warp = null;
       mode = "twinkle";
       if (cb) cb();
-      return;
     }
-    requestAnimationFrame(drawWarp);
   }
 
   function startWarp(onDone) {
+    if (!ctx) { onDone(); return; }
     mode = "warp";
     var cx = w / 2;
     var cy = h / 2;
@@ -132,7 +141,7 @@
 
   function initWarpLaunch() {
     var btn = document.getElementById("enter-site");
-    if (!btn || !canvas) return;
+    if (!btn) return;
     var splash = document.querySelector(".splash");
     var launched = false;
 
@@ -140,14 +149,29 @@
       var dest = btn.getAttribute("href");
       if (!dest || launched) return;
 
-      if (reduceMotion) return; // respect reduced-motion: let the plain link navigate
+      if (reduceMotion || !canvas || !ctx) return; // let the plain link navigate
 
       launched = true;
       e.preventDefault();
       if (splash) splash.classList.add("warping");
-      startWarp(function () {
+
+      var navigated = false;
+      function goNow() {
+        if (navigated) return;
+        navigated = true;
         window.location.href = dest;
-      });
+      }
+
+      // Safety net: whatever the canvas animation does, never strand the
+      // visitor on the splash screen (mobile browsers can throttle/kill
+      // rAF loops or restrict canvas in ways desktop testing won't catch).
+      setTimeout(goNow, 1500);
+
+      try {
+        startWarp(goNow);
+      } catch (err) {
+        goNow();
+      }
     });
   }
 
